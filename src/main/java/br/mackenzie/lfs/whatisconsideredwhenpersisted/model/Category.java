@@ -6,17 +6,19 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 
-@Getter @Setter
 @AllArgsConstructor @NoArgsConstructor
-public class Book {
+@Getter @Setter
+public class Category {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String title;
+    private String description;
 
-    @OneToOne(cascade = CascadeType.PERSIST)
-    private Tag tag;
+    @OneToMany
+    private List<Category> subcategories;
 
 }
