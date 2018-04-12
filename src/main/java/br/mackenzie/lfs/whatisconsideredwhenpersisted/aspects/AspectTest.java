@@ -15,8 +15,10 @@ public class AspectTest {
         System.out.println(message);
     }
 
-    public void say2(String message) {
+    @MooChangeValueReturn
+    public String say2(String message) {
         System.out.println(message);
+        return message;
     }
 
     @Moo

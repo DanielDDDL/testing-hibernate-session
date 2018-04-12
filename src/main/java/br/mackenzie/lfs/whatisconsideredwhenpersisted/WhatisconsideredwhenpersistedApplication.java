@@ -25,7 +25,7 @@ public class WhatisconsideredwhenpersistedApplication implements CommandLineRunn
 	public void run(String... args) throws Exception {
 
 		test.say("Hey! 1");
-		test.say2("Hey! 2 ");
+		System.out.println(test.say2("Hey! 2 "));
 		test.hey("Hey!3 ", "Hey the second");
 		test.say1("Hey! 0");
 

@@ -31,4 +31,15 @@ public class AnnoationBasedAspect {
         joinPoint.proceed(args);
     }
 
+    @Around("@annotation(br.mackenzie.lfs.whatisconsideredwhenpersisted.aspects.MooChangeValueReturn)")
+    public Object changeValue(ProceedingJoinPoint joinPoint) throws Throwable {
+        System.out.println("Alterando o valor de retorno. Vai ser uma frase do tipo: aaaaaaaaaaah!");
+
+        String result = (String) joinPoint.proceed();
+        System.out.println(result);
+
+        return "aaaaaaaaaaaaah!";
+
+    }
+
 }
